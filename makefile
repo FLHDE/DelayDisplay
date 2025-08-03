@@ -16,8 +16,8 @@ RC_FLAGS = /nologo
 $(PLUGIN_NAME).dll: Main.obj $(RES_FILE) $(COMMON_LIB) makefile
     link Main.obj $(COMMON_LIB) $(RES_FILE) $(LD_FLAGS) /OUT:$(PLUGIN_NAME).dll
 
-$(PLUGIN_NAME).obj: Main.c makefile
-    cl $(CXX_FLAGS) Main.c
+$(PLUGIN_NAME).obj: Main.cpp makefile
+    cl $(CXX_FLAGS) Main.cpp
 
 $(COMMON_LIB): $(COMMON_DEF) Common.h makefile
     lib $(LIB_FLAGS) /def:$(COMMON_DEF) /name:COMMON /out:$(COMMON_LIB)
